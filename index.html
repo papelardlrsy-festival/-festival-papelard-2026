@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Papelard — 7ᵉ édition, 2026</title>
+    <meta name="description" content="Festival Papelard La Roche-sur-Yon LRSY édition 2026 micro-édition fanzinart fanzine fest artistes art festival d'art Vendée">
+    <meta property="og:title" content="Festival Papelard — 7ᵉ édition">
+    <meta property="og:description" content="Festival annuel de la micro-édition et du fanzinat à La Roche-sur-Yon : expositions, ateliers, cinéma, concert et le Supermarché de la micro-édition.">
+    <meta property="og:image" content="assets/img/mascotte.png">
+    <link rel="canonical" href="https://festival-papelard-2026.fr" />
+    <style>
+        @font-face {
+            font-family: 'Papelard Display';
+            src: url('assets/fonts/bb-book-regular.otf') format('opentype');
+            font-weight: 700;
+            font-display: swap;
+        }
+        :root {
+            --bg: #ffffff;
+            --text: #1832bb;
+            --text-soft: #4a54c9;
+            --accent: #ff4496;
+            --card-bg: #f9fafb;
+            --card-border: 1px solid rgba(24,50,187,0.1);
+            --font-main: 'Inter', sans-serif;
+            --font-display: 'Papelard Display', 'Inter', sans-serif;
+            --radius: 14px;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--font-main); margin: 0; line-height: 1.6; overflow-x: hidden; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        /* Top nav */
+        .topnav { border-bottom: var(--card-border); position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(6px); z-index: 10; }
+        .topnav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 20px; }
+        .brand { color: var(--text); font-family: var(--font-display); font-size: 1.2rem; }
+        .brand:hover { text-decoration: none; }
+        .nav-link { font-weight: 600; padding: 0.5rem 1rem; border: 2px solid var(--accent); border-radius: 50px; color: var(--accent); }
+        .nav-link:hover { background: var(--accent); color: #fff; text-decoration: none; }
+
+        /* Hero */
+        header.hero { text-align: center; padding: 3.5rem 1rem 2.5rem; position: relative; }
+        .hero-logo-wrap { position: relative; display: inline-block; }
+        .hero-logo { width: min(420px, 80vw); margin: 0 auto; }
+        .edition-badge { position: absolute; top: -18px; right: -34px; width: 84px; transform: rotate(9deg); }
+        h1 { margin: 0; }
+        .subtitle { font-size: 1.15rem; color: var(--text-soft); max-width: 480px; margin: 1.1rem auto 0; }
+        .hero-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.75rem; }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 700; }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: #e63886; text-decoration: none; }
+        .btn-outline { border: 2px solid var(--text); color: var(--text); }
+        .btn-outline:hover { background: var(--text); color: #fff; text-decoration: none; }
+        .btn-dark { background: var(--text); color: #fff; }
+        .btn-dark:hover { background: #12269a; text-decoration: none; }
+        .hero-date { display: inline-block; font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.03em; border: 2px dashed var(--accent); color: var(--accent); padding: 0.3rem 1rem; border-radius: 50px; margin: 1.25rem 0 0; }
+        .hero-actions-secondary { display: flex; justify-content: center; margin-top: 0.75rem; }
+
+        main.container { padding-bottom: 2rem; }
+        section { margin-top: 4.5rem; scroll-margin-top: 5rem; }
+        h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin: 0 0 1.5rem 0; display: inline-block; }
+        .lede { font-size: 1.05rem; max-width: 60ch; white-space: pre-line; }
+
+        /* About section with mascot */
+        .about-flex { display: flex; align-items: flex-start; gap: 2.5rem; flex-wrap: wrap; }
+        .about-text { flex: 1 1 380px; }
+        .mascotte-img { width: 180px; flex: 0 0 auto; margin: 0 auto; }
+
+        /* Program grid */
+        .programme-heading-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .programme-heading-row h2 { margin-bottom: 0; }
+        .tag-programme-img { width: 120px; transform: rotate(-4deg); }
+        .program-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+        .program-card { background: var(--card-bg); border: var(--card-border); padding: 1.25rem; border-radius: var(--radius); }
+        .program-card h3 { margin: 0 0 0.4rem 0; font-size: 1.05rem; }
+        .program-card p { margin: 0; color: var(--text-soft); font-size: 0.95rem; }
+        .program-card.highlight { background: var(--text); border-color: var(--text); }
+        .program-card.highlight h3, .program-card.highlight p { color: #fff; }
+        .program-card.full-width { grid-column: 1 / -1; }
+
+        /* Practical info */
+        .infos-flex { display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
+        .badge-infos-img { width: 200px; flex: 0 0 auto; margin: 0 auto; }
+        .info-grid { flex: 1 1 380px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
+        .info-item h3 { margin: 0 0 0.3rem 0; font-size: 0.95rem; color: var(--accent); }
+        .info-item p { margin: 0; }
+        .info-note { font-size: 0.9rem; color: var(--text-soft); margin-top: 1.5rem; }
+
+        /* FAQ */
+        details { background: var(--card-bg); border: var(--card-border); padding: 1rem 1.25rem; border-radius: 10px; margin-bottom: 0.6rem; cursor: pointer; }
+        summary { font-weight: 700; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        summary::after { content: '+'; font-size: 1.3rem; color: var(--accent); flex-shrink: 0; }
+        details[open] summary::after { content: '−'; }
+        details p { white-space: pre-line; }
+
+        /* Boutique CTA banner */
+        .cta-banner { background: var(--text); color: #fff; border-radius: var(--radius); padding: 2.5rem; text-align: center; margin-top: 4.5rem; position: relative; overflow: visible; }
+        .cta-banner h2 { border: none; color: #fff; }
+        .cta-banner p { color: #dfe3ff; max-width: 50ch; margin: 0 auto 1.5rem; }
+        .cta-banner .btn-primary:hover { background: #ffffff; color: var(--text); }
+        .cta-hand { position: absolute; width: 90px; bottom: -20px; right: 10%; transform: rotate(-25deg); filter: brightness(0) invert(1); opacity: 0.9; }
+
+        /* Socials / contact */
+        .social-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .social-links a { border: 2px solid var(--text); border-radius: 50px; padding: 0.5rem 1.1rem; color: var(--text); font-weight: 600; }
+        .social-links a:hover { background: var(--text); color: #fff; text-decoration: none; }
+
+        footer { text-align: center; padding: 3rem 1rem 2rem; font-size: 0.85rem; color: var(--text-soft); }
+
+        @media (max-width: 600px) {
+            .hero-actions { flex-direction: column; align-items: center; }
+            .about-flex, .infos-flex { flex-direction: column; text-align: center; }
+            .cta-hand { display: none; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="topnav">
+        <div class="container topnav-inner">
+            <a href="index.html" class="brand">Papelard</a>
+            <a href="boutique.html" class="nav-link">Goodies</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>
+                <span class="hero-logo-wrap">
+                    <img src="assets/img/logo-papelard.png" alt="Festival Papelard" class="hero-logo">
+                    <img src="assets/img/badge-edition.png" alt="7ᵉ édition" class="edition-badge">
+                </span>
+            </h1>
+            <div class="hero-date">Décembre 2026</div>
+            <p class="subtitle">Festival de la micro-édition et du fanzinat<br>à La Roche-sur-Yon</p>
+            <div class="hero-actions">
+                <a href="#programme" class="btn btn-primary">Voir le programme</a>
+                <a href="#infos" class="btn btn-outline">Infos pratiques</a>
+            </div>
+            <div class="hero-actions-secondary">
+                <a href="boutique.html" class="btn btn-dark">Boutique</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="apropos">
+            <h2>Le festival en bref</h2>
+            <div class="about-flex">
+                <img src="assets/img/mascotte.png" alt="La mascotte du Festival Papelard" class="mascotte-img">
+                <div class="about-text">
+                    <p class="lede">Le Festival Papelard vous invite à découvrir la richesse des pratiques d'impression artistique et d'édition indépendante : sérigraphie, linogravure, micro-édition, fanzinat…
+
+Organisé par les bénévoles de la Commission Papelard, ce rendez-vous artistique réunit, sur l'ensemble du mois de décembre et à La Roche-sur-Yon, les passionné·es, artistes, éditeur·ices et collectifs, autour de divers évènements, dont le temps fort du <strong>Supermarché de la micro-édition</strong> !
+
+Le samedi 5 décembre, c'est la date clé pour faire de belles découvertes graphiques et éditoriales d'artistes français (ligériens et d'ailleurs) !</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="programme">
+            <div class="programme-heading-row">
+                <h2>Le programme</h2>
+                <img src="assets/img/tag-programme.png" alt="Expos, concert, cinéma" class="tag-programme-img">
+            </div>
+            <div class="program-grid">
+                <div class="program-card">
+                    <h3>Expositions</h3>
+                    <p>À venir…</p>
+                </div>
+                <div class="program-card">
+                    <h3>Ateliers</h3>
+                    <p>À venir…</p>
+                </div>
+                <div class="program-card">
+                    <h3>Cinéma</h3>
+                    <p>À venir…</p>
+                </div>
+                <div class="program-card highlight full-width">
+                    <h3>Supermarché de la micro-édition + Concert !</h3>
+                    <p>Samedi 5 décembre, à La Gâterie — 11h–18h (Supermarché) puis 18h–20h (Concert). Le temps fort du festival !</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="infos">
+            <h2>Infos pratiques</h2>
+            <div class="infos-flex">
+                <img src="assets/img/badge-infos.png" alt="Supermarché de la micro-édition, La Gâterie, entrée libre" class="badge-infos-img">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>Quand</h3>
+                        <p>Samedi 5 décembre 2026 — 11h–18h (Supermarché) puis 18h–20h (Concert)</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Où</h3>
+                        <p>La Gâterie, La Roche-sur-Yon</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Tarif</h3>
+                        <p>Entrée libre, concert compris. Seuls les achats sur les stands des artistes et au bar restent payants.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="info-note">Ces informations concernent le temps fort du 5 décembre. Les dates des expositions, ateliers et projections seront précisées prochainement.</p>
+        </section>
+
+        <section id="faq">
+            <h2>FAQ</h2>
+            <details open>
+                <summary>Le Festival Papelard, c'est quoi au juste ?</summary>
+                <p>Chaque année, le Festival Papelard vous invite à découvrir la richesse des pratiques d'impression artistique et d'édition indépendante : sérigraphie, linogravure, micro-édition, fanzinat…
+
+Organisé par les bénévoles de la Commission Papelard, ce rendez-vous artistique réunit, sur l'ensemble du mois de décembre et à La Roche-sur-Yon, les passionné·es, artistes, éditeur·ices et collectifs, autour de divers évènements, dont le temps fort du Supermarché de la micro-édition !
+
+Le samedi 5 décembre, c'est la date clé pour faire de belles découvertes graphiques et éditoriales d'artistes français (ligériens et d'ailleurs) !
+
+Au programme :
+✦ Expositions,
+✦ Ateliers,
+✦ Cinéma,
+✦ Supermarché de la micro-édition,
+✦ Et un concert pour clôturer la journée !</p>
+            </details>
+            <details>
+                <summary>C'est quand ?</summary>
+                <p>Le Supermarché de la micro-édition aura lieu le samedi 5 décembre 2026, de 11h à 18h, à La Gâterie (entrée libre), suivi d'un concert de 18h à 20h au même endroit. Les autres évènements du festival (expositions, ateliers, cinéma) se dérouleront tout au long du mois de décembre — dates à venir.</p>
+            </details>
+            <details>
+                <summary>Comment exposer ou tenir un stand au Supermarché de la micro-édition ?</summary>
+                <p>Contactez-nous pour participer à l'édition 2027 en tant qu'artiste ou collectif !</p>
+            </details>
+            <details>
+                <summary>L'entrée est-elle payante ?</summary>
+                <p>L'entrée du Supermarché de la micro-édition est libre. Pour les autres évènements, à venir.</p>
+            </details>
+        </section>
+
+        <div class="cta-banner">
+            <h2>La boutique du festival</h2>
+            <p>T-shirts sérigraphiés par nos bénévoles et stickers du Festival Papelard, en édition limitée.</p>
+            <a href="boutique.html" class="btn btn-primary">Voir la boutique</a>
+            <img src="assets/img/main-droite.png" alt="" aria-hidden="true" class="cta-hand">
+        </div>
+
+        <section id="contact">
+            <h2>Suivre le festival + nous contacter</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/papelardfestival/" target="_blank" rel="noopener">Instagram</a>
+                <a href="mailto:papelardlrsy@gmail.com">Nous écrire à papelardlrsy@gmail.com</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Festival Papelard — Commission Papelard</p>
+    </footer>
+</body>
+</html>
